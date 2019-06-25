@@ -19,7 +19,7 @@
   },
   "zeplin": {
     "displayName": "Styled Components",
-    "projectTypes": ["web"]
+    "projectTypes": ["web", "ios", "android"]
   },
   "dependencies": {
     "zem": "^0.3.3",
