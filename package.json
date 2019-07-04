@@ -18,9 +18,11 @@
   ],
   "scripts": {
     "start": "zem start",
+    "prebuild": "rm -rf ./dist",
     "build": "zem build",
     "clean": "zem clean",
     "exec": "zem exec",
+    "prepublish": "yarn build",
     "publish": "zem publish"
   },
   "zeplin": {
