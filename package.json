@@ -1,15 +1,21 @@
 {
-  "name": "zeplin-styled-components-extension",
-  "version": "0.1.2",
-  "description": "Generates styled-components snippets from colors, text styles and layers.",
+  "name": "zeplin-styled-components-rn-extension",
+  "version": "0.1.4",
+  "description": "Generates React Native styled-components snippets from colors, text styles and layers.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DaZzz/zeplin-styled-components-extension"
+    "url": "https://github.com/davidyaha/zeplin-styled-components-extension"
   },
-  "author": {
-    "name": "Tikhon",
-    "email": "tikhon.belousko@gmail.com"
-  },
+  "authors": [
+    {
+      "name": "Tikhon",
+      "email": "tikhon.belousko@gmail.com"
+    },
+    {
+      "name": "David Yahalomi",
+      "email": "david@articode.co"
+    }
+  ],
   "scripts": {
     "start": "zem start",
     "build": "zem build",
@@ -18,8 +24,11 @@
     "publish": "zem publish"
   },
   "zeplin": {
-    "displayName": "Styled Components",
-    "projectTypes": ["web", "ios", "android"]
+    "displayName": "Styled Components - React Native",
+    "projectTypes": [
+      "ios",
+      "android"
+    ]
   },
   "dependencies": {
     "zem": "^0.3.3",

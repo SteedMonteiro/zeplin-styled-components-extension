@@ -1,11 +1,14 @@
-# Zeplin Styled Components Extension
+# Zeplin Styled Components - React Native Extension
 
 
-Generates styled-components snippets from colors, text styles and layers.
+Generates styled-components snippets from colors, text styles and layers for react-native.
+
+This is an adaptation from the [original styled components extension](https://github.com/dazzz/zeplin-styled-components-extension) to make the subtle changes needed for use in react-native.
+The original repo
 
 Sample component output:
 ```js
-styled.div`
+styled.View`
   ${Typography.Button};
   width: 69px;
   height: 16px;
@@ -26,23 +29,23 @@ export default {
 
 Sample text style output:
 ```js
-import { css } from 'styled-components'
+import { styled } from 'styled-components/native'
 
 export default {
-  Body: css`
+  Body: styled.Text`
     font-family: OpenSans;
     font-size: 18px;
     line-height: 24px;
   `,
 
-  H1: css`
+  Title: styled.Text`
     font-family: OpenSans;
     font-size: 48px;
     font-weight: bold;
     line-height: 52px;
   `,
 
-  Button: css`
+  Button: styled.Text`
     font-family: OpenSans;
     font-size: 16px;
     font-weight: 500;
@@ -53,8 +56,5 @@ export default {
 ```
 
 ## TODO
-- Add parameter for exporting component styles without wrapping them in `styled.div`.
 - Add parameter for exporting colors with alpha channel using `hexToRgba` function.
 - Add parameter for including breakpoints.
-- Describe in README conventions for colors and typography.
-- Use number for font-weight instead of string (e.g. bold).

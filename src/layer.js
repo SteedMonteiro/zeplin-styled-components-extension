@@ -26,11 +26,13 @@ function filterDeclarations(declarations, textStyleMatch) {
   })
 }
 
-function joinRules(rules) {
-  return 'export const Box = styled.div`\n' + rules.join('\n') + '\n`'
+function joinRules(rules, isText) {
+  return isText
+    ? 'export const Label = styled.Text`\n' + rules.join('\n') + '\n`'
+    : 'export const Box = styled.View`\n' + rules.join('\n') + '\n`'
 }
 
-function declarationsToString(declarations, variableMap, textStyleMatch) {
+function declarationsToString(declarations, variableMap, textStyleMatch, isText) {
   const filteredDeclarations = filterDeclarations(declarations, textStyleMatch)
   const textStyleMixins = textStyleMatch ? ['  ${Typography.' + textStyleMatch.name + '};'] : []
   const rules = [
@@ -40,7 +42,7 @@ function declarationsToString(declarations, variableMap, textStyleMatch) {
     )
   ]
 
-  return joinRules(rules)
+  return joinRules(rules, isText)
 }
 
 export default function layer(context, selectedLayer) {
@@ -56,7 +58,7 @@ export default function layer(context, selectedLayer) {
   }
 
   const variableMap = getVariableMap(context.project.colors)
-  const code = declarationsToString(layerRuleSet.declarations, variableMap, textStyleMatch)
+  const code = declarationsToString(layerRuleSet.declarations, variableMap, textStyleMatch, isText)
 
   return {
     code: code,

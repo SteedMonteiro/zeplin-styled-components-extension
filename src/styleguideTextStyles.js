@@ -12,12 +12,12 @@ function declarationsToString(name, declarations) {
     d => `    ${d.name}: ${d.getValue({ densityDivisor: 1 }, {})};`
   )
 
-  return '  ' + name + ': css`\n' + rules.join('\n') + '\n  `'
+  return '  ' + name + ': styled.Text`\n' + rules.join('\n') + '\n  `'
 }
 
 function joinRules(rules) {
   return (
-    "import { css } from 'styled-components'\n\nexport default {\n" + rules.join(',\n\n') + '\n}'
+    "import { styled } from 'styled-components/native'\n\nexport default {\n" + rules.join(',\n\n') + '\n}'
   )
 }
 
