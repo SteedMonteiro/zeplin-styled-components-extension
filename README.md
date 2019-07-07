@@ -4,7 +4,6 @@
 Generates styled-components snippets from colors, text styles and layers for react-native.
 
 This is an adaptation from the [original styled components extension](https://github.com/dazzz/zeplin-styled-components-extension) to make the subtle changes needed for use in react-native.
-The original repo
 
 Sample component output:
 ```js
